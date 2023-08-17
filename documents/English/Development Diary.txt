@@ -1,0 +1,158 @@
+****************************************************** Development Diary **************************************************
+
+
+A development journal made to keep track of progress and personal thoughts about the project.
+It may be useful to see a slightly more detailed description of what changes between commits.
+Although, it could also contain some other nonsense that I wrote (or that I did in the program) to vent,
+think, or remember to fix something (probably also propose fixes)
+There won't be many hyperlinks in this text, to avoid hindering the reading too much. ;)
+
+
+----------------------------------------------------------- Diary ---------------------------------------------------------
+
+
+Day 1 (Tuesday, 01/08/23):
+- Personal:
+    Well, to begin with, I was late for class (due to an errand) and I missed the explanation of the statement xd.
+	The good thing is that it was well written, and the Professor explained me what i didn't understood, so,
+	everything fine. I started to summarize the main statement with some suggestions and ideas for variables and
+ 	such, in order to avoid big mistakes, since time is gold with this project (and yet I am here writing 
+	this, but who knows, it might come in handy). I came to write several ideas of the main statement, up to the
+	section of the lists.
+
+
+- Changes made in the Project:
+   - I only created the Main Statement file and got to the lists section.
+
+
+- TODOs:
+   - Finish with the Main Statement, and write some more in the documentation. (Done)
+
+
+
+
+Day 2 (Thursday, 03/08/23):
+- Personal:
+    Well, yesterday I didn't do anything related to the project, but I thought about it a bit.
+	Today, after a while, I decided to open it again and finish with the Main Statement.
+	Besides that, I also wrote some useful Additional Data for the project, and a small
+	Development Schedule to divide the work into stages and be clearer on what to do and when to
+	do it. Although I think I got a little excited writing it xd.
+	That's why I created this journal, I can use it to write down the funny things that come to my mind
+	and maintain the formality in the other documents.
+	It can also be useful for keeping track of file changes and overall progress.
+	Speaking of documentation and planning of the project, that stage is almost complete (I hope).
+	I wrote the base of almost all the documentation, I only need to correct some things, translate it and
+	investigate some plugins to use in the project (CSS Library, PythonAnywhere, MongoDB Atlas,
+	ChartJS, etc.).
+
+
+- Changes made to the Project:
+   - The Main Statement was edited, so far, it's complete. It could be modified in the future.
+   - The Additional Data and Development Schedule were created, so far, they are almost complete.
+   - The Development Diary was created, to keep changes and ideas of the project while it progresses.
+
+
+- TODOs:
+   - Edit Additional Data to maintain formality. (Done)
+   - Finish the Details of Stage 4 and 5 in the Development Schedule. Edit to maintain formality. (Done)
+   - Investigate about the complements that are going to be used in the project. (Done)
+   - Translate the documentation. (Done)
+   - Create (at least) the project folders and the python executable file. (Done)
+
+
+
+
+Day 3 (Friday, 04/08/23):
+- Personal:
+    After correcting the documentation, I can finally start investigating (I didn't want to but I still have to xd)
+	I'm doing some research now, gonna experiment at this basic stage and try MD3 and Materialize,
+	if they don't convince me, I will use Bootstrap again.
+	(After some reading, I think I'm going to use MD2, it looks good and it doesn't seem too bad)
+
+	I also searched about PythonAnywhere, it's a pretty simple and complete service (runs on linux server), 
+	with some limitations, but I found an article detailing how we can maintain a Github project here.
+	(Read: https://medium.com/@aadibajpai/deploying-to-pythonanywhere-via-github-6f967956e664)
+	(Read: https://pythonhow.com/python-tutorial/flask/deploy-flask-web-app-pythonanywhere/)
+
+	After reading that, I investigated how to connect MongoDB Atlas to the files we'll upload in PythonAnywhere.
+	(which will come from the Github repository)
+	(Read: https://flask-pymongo.readthedocs.io/en/latest/)
+	(Read: https://help.pythonanywhere.com/pages/MongoDB)
+	(Read: https://www.mongodb.com/compatibility/setting-up-flask-with-mongodb)
+	(Read: https://www.mongodb.com/developer/products/atlas/awslambda-pymongo/)
+	(Read: https://www.mongodb.com/community/forums/t/secure-way-to-connect-to-mongodb-atlas-from-pythonanywhere/14323)
+	(Read: https://pymongo.readthedocs.io/en/stable/atlas.html)
+
+	And finally, I did research on ChartJS, it's very easy to use, it would be a nice extra step.
+	(Read: https://www.chartjs.org/docs/latest/getting-started/installation.html)
+	(Read: https://www.w3schools.com/js/js_graphics_chartjs.asp)
+
+
+- Changes made in the Project:
+   - The Additional Data and the Development Schedule were edited.
+   - The components to be used in the project were investigated.
+   - The documentation is being translated.
+
+
+- TODOs:
+   - Finish translating the documentation (Done)
+   - Create the initial files of the project (Done)
+
+
+
+
+Day 4 (Sunday, 06/08/23):
+- Personal:
+    I think it's a bit obvious that yesterday I did absolutely nothing, and not because I didn't want to (I mean,
+	I didn't feel like it but I might as well have done something), I was out of my house all day and I couldn't 
+	edit anything in relation to this project.
+	After talking with the Professor, I confirmed that there's no issue if I use Flask-Pymongo in my project,
+	and that if I wish, I can make the connection with the DB and PythonAnywhere from now (the beginning), which
+	seems better, since adding content the connection would already be made and it would save me having to adapt it
+	in the future.
+	I plan to finish translating the documentation today, and do the basic login already from PythonAnywhere with
+	MongoDB Atlas. To verify that the connection is well made and the data is saved as it should be.
+
+
+- Changes made in the Project:
+   - Finally ended the documentation translation.
+   - Thinked a bit on what to do next.
+
+
+- TODOs:
+   - Create the initial files of the project (Done)
+
+
+
+
+Day 5 (Monday, 07/08/23):
+- Personal:
+    Oh boi, I FINALLY created the initial files of the proyect, After 5 days of investigating (and procrastinating
+	around just because I was so lazy to create them lol).
+	I created the user methods and some example methods that will be usefull later.
+	Also did the basic DB conection file and user validator, only thing left for first test is making the base.html
+	and user related html files, in first test, i will connect to DB from PythonAnywhere, so it will be like,
+	a small thing rn, but it could help a lot in the future.
+
+
+- Changes made in the Project:
+   - Finally started creating the files (and I mean, FINALLY)
+   - Made all the user methods.
+
+
+- TODOs:
+   - Create base.html and user related htmls
+   - Connect to DB and test if it works (hope)
+
+
+
+
+---------------------------------------------------------- Summary --------------------------------------------------------
+
+
+Reserved in case I have to place something here.
+It could be a brief summary, with a farewell, it would be nice.
+
+
+***************************************************************************************************************************

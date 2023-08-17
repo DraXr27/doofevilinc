@@ -1,0 +1,7 @@
+python -m venv venv
+pip install flask
+python -m pip install pymongo==3.11
+pip install Flask-PyMongo
+pip install cryptography
+pip install requests
+pip install ipify

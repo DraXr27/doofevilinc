@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista Base - Laboratorio Doof{% endblock %}
+
+
+{% block topbar_title %}
+<span class="mdc-top-app-bar__title">Lista Base</span>
+{% endblock %}
+
+
+{% block topbar_user_info %}
+<div class="user_info_topbar" ></div>
+{% endblock %}
+
+
+{% block sidebar_items %}
+<div class="list_items_top">
+    <a class="mdc-list-item" href="{{ url_for('main_page') }}">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+        <span class="mdc-list-item__text mdc-list-item__text_active">Inicio</span>
+    </a>
+    <a class="mdc-list-item" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">list</i>
+        <span class="mdc-list-item__text">Categorias</span>
+    </a>
+    <a class="mdc-list-item" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">medical_services</i>
+        <span class="mdc-list-item__text">Exámenes</span>
+    </a>
+    <a class="mdc-list-item" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">checklist</i>
+        <span class="mdc-list-item__text">Indicaciones</span>
+    </a>
+    <a class="mdc-list-item" href="{{ url_for('user_tab') }}">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">people</i>
+        <span class="mdc-list-item__text">Usuario</span>
+    </a>
+</div>
+<div class="list_items_bottom">
+    <a class="mdc-list-item mdc-list-item_about" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
+        <span class="mdc-list-item__text">Informacion</span>
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+    <h1 class="title_center first_title" >Lista Base</h1>
+    <div class="content_w_bg_group" >
+        <img id="image_bg" class="image_bg" src="https://images.pexels.com/photos/594233/pexels-photo-594233.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Lighted Purple Fiber Optic Lamp">
+        <div id="ac_cont" class="actual_content">
+            <h1 class="title_center" style="padding-bottom: 1ch;" >Base</h1>
+            <div style="display: contents;">
+                <div class="mdc-data-table invisiblebg" style="overflow-x: auto; height: 100%; border-radius: 3ch">
+                    <div class="mdc-data-table__table-container">
+                        <table class="mdc-data-table__table invisiblebg" aria-label="Dessert calories">
+                            <thead>
+                                <tr class="mdc-data-table__header-row">
+                                    <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col">Id</th>
+                                    <th class="mdc-data-table__header-cell invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col">Codigo</th>
+                                    <th class="mdc-data-table__header-cell invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col">Nombre</th>
+                                    <th class="mdc-data-table__header-cell invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="mdc-data-table__content">
+                                {% if indicationes %}
+                                    {% for indication in indicationes %}
+                                    <tr class="mdc-data-table__row">
+                                        <td class="mdc-data-table__cell mdc-data-table__cell--numeric" onclick="closeall_spc_options()">{{ indication['id'] }}</td>
+                                        <th class="mdc-data-table__cell" onclick="closeall_spc_options()" scope="row">{{ indication['codigo'] }}</th>
+                                        <th class="mdc-data-table__cell" onclick="closeall_spc_options()" scope="row">{{ indication['nombre'] }}</th>
+                                        <td class="mdc-data-table__cell" style="width: 2ch;">
+                                            <i class="option_btn material-icons mdc-list-item__graphic" style="cursor: default;" onclick="open_spc_options(this)">more_vert</i>
+                                            <div class="menu-menu mdc-menu mdc-menu-surface">
+                                                <ul class="mdc-list" style="padding-bottom: 0;" role="menu" tabindex="-1">
+                                                    <a href="{{ url_for('indication_get') }}">
+                                                        <li class="mdc-list-item" style="border-radius: 10ch;" role="menuitem">
+                                                            <span class="mdc-list-item__ripple"></span>
+                                                            <i class="material-icons mdc-list-item__graphic" style="padding-right: 16px;">article</i>
+                                                            <span class="mdc-list-item__text" style="padding-left: 0;">Consultar</span>
+                                                        </li>
+                                                    </a>
+                                                    <a href="{{ url_for('indication_update') }}">
+                                                        <li class="mdc-list-item" style="border-radius: 10ch;" role="menuitem">
+                                                            <span class="mdc-list-item__ripple"></span>
+                                                            <i class="material-icons mdc-list-item__graphic" style="padding-right: 16px;">edit</i>
+                                                            <span class="mdc-list-item__text" style="padding-left: 0;">Modificar</span>
+                                                        </li>
+                                                    </a>
+                                                    <a href="{{ url_for('indication_delete') }}">
+                                                        <li class="mdc-list-item" style="border-radius: 10ch;" role="menuitem">
+                                                            <span class="mdc-list-item__ripple"></span>
+                                                            <i class="material-icons mdc-list-item__graphic" style="padding-right: 16px;">delete</i>
+                                                            <span class="mdc-list-item__text" style="padding-left: 0;">Eliminar</span>
+                                                        </li>
+                                                    </a>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

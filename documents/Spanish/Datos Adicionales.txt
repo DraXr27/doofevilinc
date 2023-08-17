@@ -1,0 +1,52 @@
+****************************************** Recomendaciones y Datos Adicionales ****************************************
+
+
+Datos enviados por el profesor, que podrían ser de utilidad en la elaboración de éste proyecto.
+Algunos de ellos son realmente importantes (algunos redundan, pero igual es bueno recordarlos).
+
+
+---------------------------------------------------- Repo de Github ---------------------------------------------------
+
+
+- Crear el repo de Github (o GitLab) con un proyecto de Flask + Pymongo básico.
+- Diagramar y comprender como va a ser la estructura de las colecciones y del documento junto a sus propiedades
+	y atributos.
+- Elegir una Framework CSS para irse familiarizando con ella.
+	(Recomendado leer: https://dev.to/shubhadip_bhowmik/top-6-best-css-frameworks-in-2023-2eff)
+- Escribir una base.html con un layout que permite resolver el ejercicio (y que esté bien estructurada),
+	además, ya que el proyecto es relativamente complejo (hablando de funciones), el layout debe incluir
+	una barra de navegación que permita el fácil acceso a varias funciones sin mucha dificultad.
+- Brindarle acceso al profesor para que lo revise (waos).
+
+
+----------------------------------------------------- MongoDB Atlas ---------------------------------------------------
+
+
+- Tener mucho cuidado con el string de la conexión a la BD dentro del código, ya que los repositorios subidos a Github
+	son públicos y no deben contener información sensible dentro del código, porque luego podría ser modificado por
+	terceros maliciosos para vulnerar el sistema.
+
+
+-------------------------------------------------------- Python -------------------------------------------------------
+
+
+* (Continuando con lo dicho en el apartado de MongoDB Atlas)
+- Investigar como usar las variables de entorno, definir su venv y no subirlo al repositorio (añadirlo a gitIgnore).
+	(Recomendado leer: https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore, es un gitIgnore
+	para Python muy completo, este asume que la venv se llama venv (waos²) así que sería buena práctica
+	llamarlo de ésta manera)
+- Crear requirements.txt en la raíz del repositorio usando pip freeze, una buena práctica para instalar los paquetes
+	necesarios.
+- Paquetes y comandos necesarios incluidos en el requirements.txt:
+  - python -m create venv (Crear el entorno virtual)
+  - pip install flask (Instalar Flask)
+  - pip install pymongo (Instalar PyMongo)
+
+
+---------------------------------------------------- Actualización ----------------------------------------------------
+
+
+A la espera de nuevos datos útiles, éste espacio queda reservado por el momento.
+
+
+***********************************************************************************************************************

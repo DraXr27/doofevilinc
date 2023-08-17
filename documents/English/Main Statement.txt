@@ -1,0 +1,99 @@
+******************************************* Statement Summary and Main Ideas ******************************************
+
+
+The exercise requires:
+* A web application that allows managing the catalog of exams and services offered by Doof.
+
+
+--------------------------------------------------------- Items -------------------------------------------------------
+
+
+Exams and Services (exams and services is the same)
+* Basic data:
+  - Unique identifier code (id, int with validation, hidden, only show in lists)
+  - Name (name, string with validation to avoid repetition)
+  - Category (category, string that comes from another list, with validation, can be
+	a dropdown to make things easier)
+  - Type of sample (type_sample, string with validation (that comes from an internal list so that
+	it isn't just any random data, it can be stored in a list_types_sample=[]) it can be a dropdown)
+  - Price in Bs (price, int with small validation (not less than 0, etc))
+  - Belonging indications (indications, list of strings that come from another list, with validation)
+	(use the same layout as the other lists, added to the bottom of the add_exam window)
+
+
+Indications:
+* Basic data:
+  - Unique identifier code (id, int with validation, hidden, only show in lists)
+  - Instruction (name, string with validation to avoid repetition and rare characters)
+
+
+Categories:
+* Basic data:
+  - Unique identifier code (id, int with validation, hidden, only show in lists)
+  - Name (name, string with validation to avoid repetition)
+  - Description (description, string with validation to avoid repetition)
+
+
+Report:
+* Basic data:
+  - Exams by category (exams_{category}, list of objects, obtained from the db with a loop)
+  - Most common indication (common_indication, object (or string, maybe), obtained from the db with a verification loop)
+  - List that groups the exams by price range and indicates how many there are in each range
+	(1-100Bs, 101-200Bs, 201-300Bs, 301-500Bs, 501+Bs)
+	(exams_interval_(price), list of objects, obtained from the db with a loop; int, obtained from the count of the
+	exams_interval_(price))
+
+
+--------------------------------------------------------- Lists -------------------------------------------------------
+
+
+List of Exams (exams_list.html, show each exam, with its code, name and price, and the consult, modify and 
+	delete options)
+
+List of Categories (categories_list.html, show each category, with its code, name and description
+	(shortened, if it is too long), and the consult, modify and delete options)
+
+Indications List (show the indications list at the bottom of the add_exam.html window, with its
+	code and name, and the options create, select, modify and delete)
+
+
+----------------------------------------------------- Requirements ----------------------------------------------------
+
+
+Mandatory:
+  - Being a web application developed with Flask, Jinja2 and PyMongo, in addition to using a CSS library, and
+using git on a remote repository like Github or Gitlab (10pts)
+  - Design of the collections, visual aspect of the page, messages and validations (10pts)
+  - Management of exams, services and categories (5pts)
+  - Catalog Consultation (List exams, filter them, add them...) (5pts)
+  - Reports (5pts)
+  - Quality and order of the code (5pts)
+
+
+Optional (Extra Points):
+  - Deploy it in an online service (ex PythonAnywhere) and contact MongoDB Atlas in a free tier (10pts)
+  - Use a ChartJS type library (pie charts) to display data in reports (10pts)
+  - Implement an authentication system with a simple username and password (5pts)
+
+
+------------------------------------------------------- Delivery ------------------------------------------------------
+
+
+It will be done through the github or gitlab repository, it must be shared with the Professor account.
+The latest version as of Tuesday 08-15-2023 at 11:59 pm will be taken into account.
+
+For the defense, a slide or presentation must be made.
+
+
+------------------------------------------------------ IMPORTANT ------------------------------------------------------
+
+
+Objects that must be able to be created, modified and deleted in the project:
+  - Categories (+ consult)
+  - Exams (+ consult)
+  - Indications
+
+Reports are generated automatically upon request.
+
+
+***********************************************************************************************************************

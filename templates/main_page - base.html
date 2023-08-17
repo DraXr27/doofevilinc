@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Pagina Principal - Laboratorio Doof{% endblock %}
+
+
+{% block topbar_title %}
+<span class="mdc-top-app-bar__title">Pagina Principal</span>
+{% endblock %}
+
+
+{% block topbar_user_info %}
+<div class="user_info_topbar" >
+    <h1 class="user_text_topbar" >{{ current_user["name"] }}</h1>
+    <h1 class="user_text_topbar" >@{{ current_user["username"] }}</h1>
+</div>
+{% endblock %}
+
+
+{% block sidebar_items %}
+<div class="list_items_top">
+    <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page" tabindex="0">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+        <span class="mdc-list-item__text mdc-list-item__text_active">Inicio</span>
+    </a>
+    <a class="mdc-list-item" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">list</i>
+        <span class="mdc-list-item__text">Categorias</span>
+    </a>
+    <a class="mdc-list-item" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">medical_services</i>
+        <span class="mdc-list-item__text">Exámenes</span>
+    </a>
+    <a class="mdc-list-item" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">checklist</i>
+        <span class="mdc-list-item__text">Indicaciones</span>
+    </a>
+    <a class="mdc-list-item" href="{{ url_for('user_tab') }}">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">people</i>
+        <span class="mdc-list-item__text">Usuario</span>
+    </a>
+</div>
+<div class="list_items_bottom">
+    <a class="mdc-list-item mdc-list-item_about" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
+        <span class="mdc-list-item__text">Informacion</span>
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+    <h1 class="title_center first_title" >Inicio</h1>
+    <h1 class="content_center" >Bienvenido, {{ current_user["name"] }}</h1>
+    <div class="content_w_bg_group" >
+        <img id="image_bg" class="image_bg" src="https://images.pexels.com/photos/594233/pexels-photo-594233.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Lighted Purple Fiber Optic Lamp">
+        <div id="ac_cont" class="actual_content">
+            <h1 class="title_center" >Ir a</h1>
+
+        </div>
+    </div>
+{% endblock %}

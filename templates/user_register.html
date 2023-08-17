@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block title %}Registrarse - Laboratorio Doof{% endblock %}
+
+
+{% block topbar_title %}
+<span class="mdc-top-app-bar__title">Registrarse</span>
+{% endblock %}
+
+
+{% block topbar_user_info %}
+<div class="user_info_topbar" ></div>
+{% endblock %}
+
+
+{% block sidebar_items %}
+<div class="list_items_top">
+    <a class="mdc-list-item" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+        <span class="mdc-list-item__text mdc-list-item__text_active">Inicio</span>
+    </a>
+    <a class="mdc-list-item" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">list</i>
+        <span class="mdc-list-item__text">Categorias</span>
+    </a>
+    <a class="mdc-list-item" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">medical_services</i>
+        <span class="mdc-list-item__text">Exámenes</span>
+    </a>
+    <a class="mdc-list-item" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">checklist</i>
+        <span class="mdc-list-item__text">Indicaciones</span>
+    </a>
+    <a class="mdc-list-item" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">people</i>
+        <span class="mdc-list-item__text">Usuario</span>
+    </a>
+</div>
+<div class="list_items_bottom">
+    <a class="mdc-list-item mdc-list-item_about" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
+        <span class="mdc-list-item__text">Informacion</span>
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+    <h1 class="title_center first_title" >Registrarse</h1>
+    <form method="post">
+        <div class="content_w_bg_group" >
+            <img id="image_bg" class="image_bg" src="https://images.pexels.com/photos/594233/pexels-photo-594233.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Lighted Purple Fiber Optic Lamp">
+            <div id="ac_cont" class="actual_content">
+                <div class="centered_items" style="height: 100%;">
+                    <div class="textfields_login">
+                        <label class="mdc-text-field mdc-text-field--outlined">
+                            <span class="mdc-notched-outline">
+                                <span class="mdc-notched-outline__leading"></span>
+                                <span class="mdc-notched-outline__notch"></span>
+                                <span class="mdc-notched-outline__trailing"></span>
+                            </span>
+                            <input type="text" id="user_name" name="user_name" placeholder="Nombre" class="text_input">
+                        </label>
+                        <label class="mdc-text-field mdc-text-field--outlined">
+                            <span class="mdc-notched-outline">
+                                <span class="mdc-notched-outline__leading"></span>
+                                <span class="mdc-notched-outline__notch"></span>
+                                <span class="mdc-notched-outline__trailing"></span>
+                            </span>
+                            <input type="text" id="user_username" name="user_username" placeholder="Usuario" class="text_input">
+                        </label>
+                        <label class="mdc-text-field mdc-text-field--outlined">
+                            <span class="mdc-notched-outline">
+                                <span class="mdc-notched-outline__leading"></span>
+                                <span class="mdc-notched-outline__notch"></span>
+                                <span class="mdc-notched-outline__trailing"></span>
+                            </span>
+                            <input type="password" id="user_password" name="user_password" placeholder="Contraseña" class="text_input">
+                            <a id="show_psw_btn" class="show_psw_btn" style="align-self: center;" onclick="pass_show_hide()" >
+                                <i id="show_psw_icon" class="material-icons mdc-list-item__graphic" aria-hidden="true">visibility</i>
+                            </a>
+                        </label>
+                    </div>
+                    <div class="buttons_login">
+                        <a href="{{ url_for('login') }}">
+                            <button type="button" class="mdc-button mdc-button--outlined">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">Volver</span>
+                            </button>
+                        </a>
+                        <button id="filled_butt" type="submit" class="mdc-button mdc-button--raised">
+                            <span class="mdc-button__label_white">Registrarse</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

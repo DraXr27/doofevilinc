@@ -1,0 +1,160 @@
+**************************************************** Diario de Desarrollo *************************************************
+
+
+Un diario de desarrollo hecho para llevar nota de los avances y pensamientos personales sobre el proyecto.
+Puede ser útil para ver una descripción un poco más detallada de que es lo que cambia entre commits.
+Aunque, también podría contener alguna que otra boberia que escribí (o que hice en el programa) para desahogarme, 
+pensar, o recordar arreglar algo (también proponer fixes probablemente)
+No habrán muchos hipervínculos en éste texto, para no entorpecer mucho la lectura. ;)
+
+
+----------------------------------------------------------- Diario --------------------------------------------------------
+
+
+Dia 1 (Martes, 01/08/23):
+- Personal:
+   Pues, para empezar, llegué tarde a clases (por una diligencia) y me perdí de la explicación del enunciado xd.
+	Lo bueno es que estaba bien redactado, y el profesor me explicó lo que no me había quedado claro, así que,
+	todo bien. Comencé a resumir el enunciado principal con algunas sugerencias e ideas para las variables y demás,
+	para así evitar grandes errores, ya que el tiempo es oro con este proyecto (y aún así estoy aqui escribiendo
+	esto, pero quien sabe, podría llegar a ser útil). Llegué a redactar varias ideas del enunciado principal, hasta 
+	el apartado de los listados.
+
+
+- Cambios Realizados en el Proyecto:
+  - Solamente creé el archivo de Enunciado Principal y llegué al apartado de los listados.
+
+
+- TODOs:
+  - Terminar con el Enunciado Principal, y escribir un poco más en la documentación. (Hecho)
+
+
+
+
+Dia 2 (Jueves, 03/08/23):
+- Personal:
+   Bueno, el día de ayer no hice nada relacionado al proyecto, pero pensé un poco en eso.
+	Hoy, después de un rato, decidí abrirlo de nuevo y terminar con el Enunciado Principal.
+	Además de eso, también escribí algunos Datos Adicionales útiles para el proyecto, y un pequeño
+	Cronograma de Desarrollo para dividir el trabajo por etapas y estar más claro en que hacer y cuando
+	hacerlo. Aunque creo que me emocione un poco escribiéndolo xd.
+	Por eso cree este diario, puedo utilizarlo para escribir las cosas graciosas que se me vengan a la mente
+	y mantener la formalidad en los demás documentos.
+	También puede ser útil para llevar un registro de cambios de los archivos y del progreso en general.
+	Hablando de documentación y planteamiento del proyecto, casi completo esa etapa.
+	Escribí la base de casi toda la documentación, solo me falta corregirle algunas cosas, traducirla e
+	investigar sobre algunos complementos a usar en el proyecto (Libreria CSS, PythonAnywhere, MongoDB Atlas,
+	ChartJS, etcétera).
+
+
+- Cambios Realizados en el Proyecto:
+  - Se editó el Enunciado Principal, hasta ahora, está completo. Podría ser modificado en el futuro.
+  - Se crearon los Datos Adicionales y el Cronograma de Desarrollo, hasta ahora, están casi completos. 
+  - Se creó el Diario de Desarrollo, para llevar cambios e ideas del proyecto mientras éste avanza.
+
+
+- TODOs:
+  - Editar los Datos Adicionales para mantener la formalidad. (Hecho)
+  - Terminar los Detalles de la Etapa 4 y 5 en el Cronograma de Desarrollo. Editar para mantener formalidad. (Hecho)
+  - Investigar sobre los complementos que se van a utilizar en el proyecto. (Hecho)
+  - Traducir la documentación.
+  - Crear (al menos) las carpetas del proyecto y el archivo ejecutable de Python.
+
+
+
+
+Dia 3 (Viernes, 04/08/23):
+- Personal:
+   Despues de corregir la documentación, por fin puedo empezar el proyecto (no queria pero igual tengo que xd)
+	Estoy investigando un poco, voy a experimentar en esta etapa básica y a probar MD3 y Materialize (MD2), si no
+	me convencen, volveré a usar Bootstrap.
+	(Investigué un poco, creo que voy a usar MD2, se ve bien y no parece tan malo)
+
+	También busqué sobre PythonAnywhere, es un servicio bastante sencillo y completo, con algunas limitaciones,
+	(ejecuta en servidor linux) pero encontré un articulo que detalla como podemos mantener un proyecto de Github 
+	aquí.
+	(Leer: https://medium.com/@aadibajpai/deploying-to-pythonanywhere-via-github-6f967956e664)
+	(Leer: https://pythonhow.com/python-tutorial/flask/deploy-flask-web-app-pythonanywhere/)
+
+	Después de leer eso, investigué como conectar MongoDB Atlas a los archivos que se encuentren en PythonAnywhere
+	(que van a provenir del repositorio de Github)
+	(Leer: https://flask-pymongo.readthedocs.io/en/latest/)
+	(Leer: https://help.pythonanywhere.com/pages/MongoDB)
+	(Leer: https://www.mongodb.com/compatibility/setting-up-flask-with-mongodb)
+	(Leer: https://www.mongodb.com/developer/products/atlas/awslambda-pymongo/)
+	(Leer: https://www.mongodb.com/community/forums/t/secure-way-to-connect-to-mongodb-atlas-from-pythonanywhere/14323)
+	(Leer: https://pymongo.readthedocs.io/en/stable/atlas.html)
+
+	Y finalmente, investigué sobre ChartJS, es muy sencilla de utilizar, sería un buen paso extra.
+	(Leer: https://www.chartjs.org/docs/latest/getting-started/installation.html)
+	(Leer: https://www.w3schools.com/js/js_graphics_chartjs.asp)
+
+
+- Cambios Realizados en el Proyecto:
+  - Se editaron los Datos Adicionales y el Cronograma de Desarrollo.
+  - Se investigó sobre los componentes a utilizar en el proyecto.
+  - Se está traduciendo la documentación.
+
+
+- TODOs:
+  - Terminar de traducir la documentación
+  - Crear los archivos iniciales del proyecto (:sad:)
+
+
+
+
+Dia 4 (Domingo, 06/08/23):
+- Personal:
+   Creo que es un poco obvio que ayer no hice absolutamente nada, y no porque no quería (osea, no tenía ganas pero
+	igual podría haber hecho algo), estuve todo el día fuera de mi casa y no pude adelantar nada en relación a
+	éste proyecto.
+	Después de haber hablado con el profesor, confirme que no hay problema si utilizo Flask-Pymongo en mi proyecto,
+	y que si lo deseo, puedo realizar la conexión con la BD y PythonAnywhere desde ahorita (el principio), lo que 
+	me parece mejor, ya que al ir añadiendo contenido ya estaría la conexión realizada y me ahorraria tener que 
+	adaptarla en un futuro.
+	Tengo planeado terminar de traducir la documentación hoy, y hacer el login básico ya desde PythonAnywhere con
+	MongoDB Atlas. Para así minimo verificar que la conexión está bien hecha y los datos se guardan como se deben.
+
+
+- Cambios Realizados en el Proyecto:
+  - Finalmente termine la traducción de la documentación.
+  - Pensé un poco en que iba a hacer después.
+
+
+- TODOs:
+  - Crear los archivos iniciales del proyecto (ay virgencitaaaaaa)
+
+
+
+
+Day 5 (Lunes, 07/08/23):
+- Personal:
+    Oh si, FINALMENTE creé los archivos iniciales del proyecto, después de 5 días de investigar (y procrastinar
+	solo porque me dio flojera crearlos xdd).
+	Creé los métodos de usuario y algunos métodos de ejemplo que serán útiles más adelante.
+	También hice el archivo de conexión básico de la BD y las validaciones de usuario, lo único que falta para
+	realizar la primera prueba es hacer la base.html y archivos html relacionados con el usuario, en la primera
+	prueba, me conectaré a la DB desde PythonAnywhere, lo que se verá como algo minúsculo ahora, pero podría ayudar
+	mucho en el futuro.
+
+
+- Cambios Realizados en el Proyecto:
+   - Finalmente creé los archivos del proyecto (y digo, FINALMENTE)
+   - Creé los metodos para el usuario.
+
+
+- TODOs:
+   - Crear base.html y los htmls relacionados a usuario.
+   - Conectar a la BD y ver si funciona (esperemos)
+
+
+
+
+---------------------------------------------------------- Resumen --------------------------------------------------------
+
+
+Reservado en caso de que tenga que colocar algo aquí.
+Podria ser un breve resumen, con una despedida, estaría bien.
+
+
+***************************************************************************************************************************

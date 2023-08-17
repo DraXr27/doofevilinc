@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block title %}Usuario ({{ current_user["name"] }}) - Laboratorio Doof{% endblock %}
+
+
+{% block topbar_title %}
+<span class="mdc-top-app-bar__title">Panel de Usuario</span>
+{% endblock %}
+
+
+{% block topbar_user_info %}
+<div class="user_info_topbar" ></div>
+{% endblock %}
+
+
+{% block sidebar_items %}
+<div class="list_items_top">
+    <a class="mdc-list-item" href="{{ url_for('main_page') }}">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+        <span class="mdc-list-item__text mdc-list-item__text_active">Inicio</span>
+    </a>
+    <a class="mdc-list-item" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">list</i>
+        <span class="mdc-list-item__text">Categorias</span>
+    </a>
+    <a class="mdc-list-item" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">medical_services</i>
+        <span class="mdc-list-item__text">Exámenes</span>
+    </a>
+    <a class="mdc-list-item" href="{{ url_for('indications_list') }}">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">checklist</i>
+        <span class="mdc-list-item__text">Indicaciones</span>
+    </a>
+    <a class="mdc-list-item mdc-list-item--activated" aria-current="page" tabindex="0">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">people</i>
+        <span class="mdc-list-item__text">Usuario</span>
+    </a>
+</div>
+<div class="list_items_bottom">
+    <a class="mdc-list-item mdc-list-item_about" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
+        <span class="mdc-list-item__text">Informacion</span>
+    </a>
+</div>
+{% endblock %}
+
+
+{% block content %}
+    <div id="mdc-dialog" class="mdc-dialog" style="display: none;">
+        <div class="mdc-dialog__container">
+            <div class="mdc-dialog__surface"
+                role="alertdialog"
+                aria-modal="true"
+                aria-labelledby="my-dialog-title"
+                aria-describedby="my-dialog-content">
+                <div class="mdc-dialog__title" id="my-dialog-title">
+                    Eliminar?
+                </div>
+                <div class="mdc-dialog__content" id="my-dialog-content">
+                    Esta seguro que desea eliminar su usuario? <br> Esta accion es permanente y no se puede deshacer.
+                </div>
+                <div class="mdc-dialog__actions">
+                    <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel" onclick="popup_openclose()" >
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label">Cancelar</span>
+                    </button>
+                    <a href="{{ url_for('user_delete') }}">
+                        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="discard">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">Eliminar</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-dialog__scrim" onclick="popup_openclose()" ></div>
+    </div>
+
+    <h1 class="title_center first_title" >Informacion de Usuario</h1>
+    <div class="content_w_bg_group" >
+        <img id="image_bg" class="image_bg" src="https://images.pexels.com/photos/594233/pexels-photo-594233.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Lighted Purple Fiber Optic Lamp">
+        <div id="ac_cont" class="actual_content">
+            <div class="user_cont">
+                <div>
+                    <img id="user_image" class="user_image" src="https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png" alt="User Icon">
+                </div>
+                <div class="user_info_cont">
+                    <div class="user_info_inner_cont">
+                        <div>
+                            <h1 class="title_left" style="margin-top: 0;" >Nombre:</h1>
+                            <h1 class="content_left" >{{ current_user["name"] }}</h1>
+                        </div>
+                        <div>
+                            <h1 class="title_left"  style="margin-top: 0;" >Usuario:</h1>
+                            <h1 class="content_left" >@{{ current_user["username"] }}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="user_info_cont" style="width: 25ch;">
+                    <div class="user_info_inner_cont" style="height: 50%; width: 20ch; gap: 5ch;">
+                        <div>
+                            <a href="{{ url_for('user_update') }}">
+                                <button type="button" class="mdc-button mdc-button--outlined">
+                                    <span class="mdc-button__ripple"></span>
+                                    <span class="mdc-button__label">Editar Usuario</span>
+                                </button>
+                            </a>
+                        </div>
+                        <div>
+                            <button type="button" class="mdc-button mdc-button--outlined" onclick="popup_openclose()">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">Eliminar Usuario</span>
+                            </button>
+                        </div>
+                        <div>
+                            <a href="{{ url_for('logout') }}" style="color: white;">
+                                <button id="filled_butt" type="button" class="mdc-button mdc-button--raised">
+                                    <span class="mdc-button__label_white">Cerrar Sesion</span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

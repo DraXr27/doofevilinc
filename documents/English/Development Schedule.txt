@@ -1,0 +1,90 @@
+************************************************ Program Development Stages *******************************************
+
+
+Small reference list to get an idea of how the program will be developed.
+Created with the purpose of avoiding any mistake at an advanced point of development.
+This, along with the variables defined in the Main Statement, will be very useful in the long run.
+
+
+----------------------------------------------------- List of Stages --------------------------------------------------
+
+
+Stage 1 (Start: 02/08/23 - End: 07/08/23):
+- Main Statement analysis.
+- Proposition of variables and objects.
+- Research prior to the start of the project.
+- Creation of documentation.
+
+
+Stage 2 (Start: 07/08/23 - End: -):
+- Creation of the project itself.
+- Add all the basic data for the program operation.
+- Add basic HTML, CSS and JS.
+- Add the basic authentication system. (Read Details - Stage 2)
+- Add necessary basic validations and fix serious bugs.
+- Connect with MongoDB.
+- Get to a functional version of the program.
+- Upload the files with Git.
+- Make the Git - Github - PythonAnywhere - MongoDb Atlas connection.
+- Update the documentation in case of changes.
+
+
+Stage 3 (Start: - - End: -):
+- Polish what was created in the previous stage, both functionally and visually.
+- Make all the necessary fixes and correct errors (minors and, in the worst case, serious ones).
+- Polish the validations as best as possible.
+- Polish the CSS with animations and interfaces, and refine the JS.
+- Update the documentation in case of changes.
+
+
+Stage 4 (Start: - - End: 08/15/23):
+- Make the project extras.
+- Use a ChartJS type library to display data in reports.
+- Deploy the project to an online service (such as PythonAnywhere).
+- Research how to connect with MongoDB Atlas (free tier, has limitations).
+- Make the program work remotely.
+
+
+-------------------------------------------------- Details - Stage 1 --------------------------------------------------
+
+
+Stage 1 of the project it's about the deep analysis of the statement, various proposals and ideas that must be
+organized to avoid delays in the near future.
+A brief research on various components that will be used in the project to know the basics about them
+(CSS Library, PythonAnywhere, MongoDB Atlas, ChartJS, etc.).
+And also the creation of this "documentation" (Development Diary included).
+
+
+-------------------------------------------------- Details - Stage 2 --------------------------------------------------
+
+
+Stage 2 of the project (probably the longest stage) is starting the development of the program,
+mainly creating the virtual environment, installing Flask, MongoPy and updating pip.
+Creating the base.html and adding the CSS framework that was already investigated, as well as the JS.
+Now, the basic username-password authentication system will be created (It's an extra, but it's better to
+implement it on early development, breaking functional code near the deadline would be horrible).
+Then, the collections (categories, exams and indications) will be created in the DB, also adding the code that
+allows to create a basic CRUD between the DB and the program, and fixing the serious errors that could appear.
+After reaching a "stable" version, the files will be pushed to the repository using a git commit
+(without forgetting to configure the gitignore), and the documentation will be updated if necessary.
+
+
+-------------------------------------------------- Details - Stage 3 --------------------------------------------------
+
+
+Stage 3 of the project deals with the final steps in terms of main development, polishing the features
+and validations of the program, beautifying the program to arrive at an almost finished product.
+Although this stage may not be as long as Stage 2, it may take time, but it's good, because
+the more the program can be polished, the better it will look, and work.
+If time runs out, the project could end at this stage, let's hope that's not the case.
+
+
+-------------------------------------------------- Details - Stage 4 --------------------------------------------------
+
+
+Stage 4 of the project is actually the extras, which will give additional points.
+They are not obligatory, but those extra points won't be bad.
+They'll done at the end, so they don't prevent the finishing of the main project.
+
+
+***********************************************************************************************************************

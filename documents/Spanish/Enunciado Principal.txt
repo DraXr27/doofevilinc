@@ -1,0 +1,99 @@
+*************************************** Resumen del Enunciado e Ideas Principales *************************************
+
+
+En el ejercicio se solicita:
+* Aplicación web que permita gestionar el catálogo de exámenes y servicios ofrecidos por Doof.
+
+
+------------------------------------------------------- Elementos -----------------------------------------------------
+
+
+Exámenes y Servicios (exámenes y servicios es lo mismo)
+* Datos Básicos:
+ - Código identificador único (id, int con validación, oculto, solo mostrar en las listas)
+ - Nombre (nombre, string con validacion para evitar repetición)
+ - Categoria (categoria, string que proviene de otra lista, con validación, puede ser
+	un dropdown para facilitar las cosas)
+ - Tipo de muestra (tipo_muestra, string con validación (que venga de una lista interna para que
+	no sea cualquier dato al azar, pueden estar guardados en una lista_tipos_muestra=[]) puede ser un dropdown)
+ - Precio en Bs (precio, int con validación pequeña (no menor a 0, etc))
+ - Indicaciones pertenecientes (indicaciones, lista de strings que provienen de otra lista, con validación)
+	(usar el mismo layout que las demás listas, añadido al fondo de la ventana agregar_examen)
+
+
+Indicaciones:
+* Datos Básicos:
+ - Código identificador único (id, int con validación, oculto, solo mostrar en las listas)
+ - Instruccion (nombre, string con validacion para evitar repetición y carácteres raros)
+
+
+Categorías:
+* Datos Básicos:
+ - Código identificador único (id, int con validación, oculto, solo mostrar en las listas)
+ - Nombre (nombre, string con validacion para evitar repetición)
+ - Descripción (descripción, string con validacion para evitar repetición)
+
+
+Reporte:
+* Datos Básicos:
+ - Exámenes por categoría (examenes_{categoria}, lista de objetos, obtenida de la bd con un bucle)
+ - Indicación más común (indicacion_comun, objeto (o string, quizás), obtenido de la db con un bucle de verificación)
+ - Lista que agrupe los exámenes por intervalo de precio e indicar cuantos hay en cada intervalo
+	(1-100Bs, 101-200Bs, 201-300Bs, 301-500Bs, 501+Bs)
+	(examenes_intervalo_(precio), lista de objetos, obtenida de la bd con un bucle; int, obtenido del count de la
+	lista de exámenes)
+
+
+------------------------------------------------------- Listados ------------------------------------------------------
+
+
+Listado de Exámenes (lista_examenes.html, mostrar cada exámen, con su codigo, nombre y precio,
+	y las opciones cons, mod y elim)
+
+Listado de Categorias (lista_categorias.html, mostrar cada categoria, con su codigo, nombre y descripcion
+	(resumida si es muy larga), y las opciones cons, mod y elim)
+
+Listado de Indicaciones (mostrar la lista de indicaciones al fondo de la ventana añadir_examen.html, con su
+	codigo y nombre, y las opciones crear, seleccionar, mod y elim)
+
+
+------------------------------------------------------ Requisitos -----------------------------------------------------
+
+
+Obligatorios:
+ - Ser una aplicacion web desarrollada con Flask, Jinja2 y PyMongo, además de usar una libreria CSS, y
+	utilizar git en un repositorio remoto como Github o Gitlab (10pts)
+ - Diseño de las colecciones, aspecto visual de la página, mensajes y validaciones (10pts)
+ - Gestión de exámenes, servicios y categorías (5pts)
+ - Consulta de Catálogo (Listar exámenes, filtrarlos, añadirlos...) (5pts)
+ - Reportes (5pts)
+ - Calidad y orden del código (5pts)
+
+
+Opcionales (Puntos Extra):
+ - Desplegarla en un servicio en línea (ej. PythonAnywhere) y contactar con MongoDB Atlas en una capa gratuita (10pts)
+ - Utilizar una libreria tipo ChartJS (gráficos tipo pie) para visualizar datos en los reportes (10pts)
+ - Implementar un sistema de autenticación con usuario y contraseña sencillo (5pts)
+
+
+------------------------------------------------------- Entrega -------------------------------------------------------
+
+
+Se realizará a traves del repositorio de github o gitlab, se debe compartir con la cuenta del Profesor.
+Se tomará en cuenta la última version del martes 15-08-2023 a las 11:59pm.
+
+Para la defensa, se debe realizar una diapositiva o presentación.
+
+
+----------------------------------------------------- IMPORTANTE ------------------------------------------------------
+
+
+Objetos que se deben poder crear, modificar y eliminar en el proyecto:
+ - Categorías (+ consultar)
+ - Exámenes (+ consultar)
+ - Indicaciones
+
+Los reportes se generan de manera automatica al solicitarlos.
+
+
+***********************************************************************************************************************

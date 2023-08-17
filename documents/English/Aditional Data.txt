@@ -1,0 +1,52 @@
+*************************************** Recommendations and Additional Information ************************************
+
+
+Data sent by the Professor, which could be useful in the development of this project.
+Some of them are really important (some redundant, but still good to remember).
+
+
+------------------------------------------------------ Github Repo ----------------------------------------------------
+
+
+- Create the Github (or GitLab) repo with a basic Flask + Pymongo project.
+- Diagram and understand how the structure of the collections and the document will be, together with their properties
+	and attributes.
+- Choose a CSS Framework to become familiar with it.
+	(Recommended to read: https://dev.to/shubhadip_bhowmik/top-6-best-css-frameworks-in-2023-2eff)
+- Write a base.html with a layout that allows solving the exercise (and that is well structured),
+	Also, since the project is relatively complex (talking about functions), the layout should include
+	a navigation bar that allows easy access to various functions without much difficulty.
+- Provide access to the teacher to review the proyect (bruh).
+
+
+----------------------------------------------------- MongoDB Atlas ---------------------------------------------------
+
+
+- Be very careful with the DB connection string within the code, since the repositories uploaded to Github
+	are public and should not contain sensitive information within the code, because it could later be modified by
+	malicious third parties to exploit the system.
+
+
+-------------------------------------------------------- Python -------------------------------------------------------
+
+
+* (Continuing with what was said in the MongoDB Atlas section)
+- Investigate how to use environment variables, define your venv and don't push it to the repository (add it to
+	gitIgnore).(Recommended to read: https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore,
+	it's a very complete gitIgnore for Python, this assumes that the venv is called venv (bruh²) so it would be 
+	a good practice to call it this way)
+- Create requirements.txt in the root of the repository using pip freeze, a good practice to install the necessary
+	packages.
+- Necessary packages and commands included in the requirements.txt:
+   - python -m create venv (Create the virtual environment)
+   - pip install flask (Install Flask)
+   - pip install pymongo (Install PyMongo)
+
+
+-------------------------------------------------------- Update -------------------------------------------------------
+
+
+Pending of new useful data, this space is reserved for the moment.
+
+
+***********************************************************************************************************************

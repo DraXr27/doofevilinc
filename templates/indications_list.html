@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Indicaciones - Laboratorio Doof{% endblock %}
+
+
+{% block topbar_title %}
+<span class="mdc-top-app-bar__title">Lista de Indicaciones</span>
+{% endblock %}
+
+
+{% block topbar_user_info %}
+<div class="user_info_topbar" >
+    <h1 class="user_text_topbar" >{{ current_user["name"] }}</h1>
+    <h1 class="user_text_topbar" >@{{ current_user["username"] }}</h1>
+</div>
+{% endblock %}
+
+
+{% block sidebar_items %}
+<div class="list_items_top">
+    <a class="mdc-list-item" href="{{ url_for('main_page') }}">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+        <span class="mdc-list-item__text mdc-list-item__text_active">Inicio</span>
+    </a>
+    <a class="mdc-list-item">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">list</i>
+        <span class="mdc-list-item__text">Categorias</span>
+    </a>
+    <a class="mdc-list-item">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">medical_services</i>
+        <span class="mdc-list-item__text">Exámenes</span>
+    </a>
+    <a class="mdc-list-item mdc-list-item--activated">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">checklist</i>
+        <span class="mdc-list-item__text">Indicaciones</span>
+    </a>
+    <a class="mdc-list-item" href="{{ url_for('user_tab') }}">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">people</i>
+        <span class="mdc-list-item__text">Usuario</span>
+    </a>
+</div>
+<div class="list_items_bottom">
+    <a class="mdc-list-item mdc-list-item_about" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
+        <span class="mdc-list-item__text">Informacion</span>
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+    <h1 class="title_center first_title" >Lista de Indicaciones</h1>
+    <div style="justify-content: center; align-items: center; display: flex; padding-top: 2ch;">
+        <a href="{{ url_for('indication_add') }}">
+            <button id="filled_butt" type="submit" class="mdc-button mdc-button--raised">
+                <span class="mdc-button__label_white">Añadir Indicacion</span>
+            </button>
+        </a>
+    </div>
+    <div class="content_w_bg_group" >
+        <img id="image_bg" class="image_bg" src="https://images.pexels.com/photos/594233/pexels-photo-594233.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Lighted Purple Fiber Optic Lamp">
+        <div id="ac_cont" class="actual_content">
+            <h1 class="title_center" style="padding-bottom: 1ch;" >Indicaciones</h1>
+            <div style="display: contents;">
+                <div class="mdc-data-table invisiblebg" style="overflow-x: auto; height: 100%; border-radius: 3ch">
+                    <div class="mdc-data-table__table-container">
+                        <table class="mdc-data-table__table invisiblebg" aria-label="Dessert calories">
+                            <thead>
+                                <tr class="mdc-data-table__header-row">
+                                    <th class="mdc-data-table__header-cell invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col">Nombre</th>
+                                    <th class="mdc-data-table__header-cell invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col">Instruccion</th>
+                                    <th class="mdc-data-table__header-cell invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="mdc-data-table__content">
+                                {% if indicationes %}
+                                    {% for indication in indicationes %}
+
+                                    <div id="mdc-dialog" class="mdc-dialog" style="display: none;">
+                                        <div class="mdc-dialog__container">
+                                            <div class="mdc-dialog__surface"
+                                                role="alertdialog"
+                                                aria-modal="true"
+                                                aria-labelledby="my-dialog-title"
+                                                aria-describedby="my-dialog-content">
+                                                <div class="mdc-dialog__title" id="my-dialog-title">
+                                                    Eliminar?
+                                                </div>
+                                                <div class="mdc-dialog__content" id="my-dialog-content">
+                                                    Esta seguro que desea eliminar esta indicacion? <br> Esta accion es permanente y no se puede deshacer.
+                                                </div>
+                                                <div class="mdc-dialog__actions">
+                                                    <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel" onclick="popup_openclose()" >
+                                                        <div class="mdc-button__ripple"></div>
+                                                        <span class="mdc-button__label">Cancelar</span>
+                                                    </button>
+                                                    <a href="{{ url_for('indication_delete', id=indication['_id']) }}">
+                                                        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="discard">
+                                                            <div class="mdc-button__ripple"></div>
+                                                            <span class="mdc-button__label">Eliminar</span>
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mdc-dialog__scrim" onclick="popup_openclose()" ></div>
+                                    </div>
+
+                                    <tr class="mdc-data-table__row">
+                                        <th class="mdc-data-table__cell" onclick="closeall_spc_options()" scope="row">{{ indication['name'] }}</th>
+                                        <th class="mdc-data-table__cell" onclick="closeall_spc_options()" scope="row">{{ indication['instruction'] }}</th>
+                                        <td class="mdc-data-table__cell" style="width: 2ch;">
+                                            <i class="option_btn material-icons mdc-list-item__graphic" style="cursor: default;" onclick="open_spc_options(this)">more_vert</i>
+                                            <div class="menu-menu mdc-menu mdc-menu-surface">
+                                                <ul class="mdc-list" style="padding-bottom: 0;" role="menu" tabindex="-1">
+                                                    <a href="{{ url_for('indication_get', id=indication['_id']) }}">
+                                                        <li class="mdc-list-item" style="border-radius: 10ch;" role="menuitem">
+                                                            <span class="mdc-list-item__ripple"></span>
+                                                            <i class="material-icons mdc-list-item__graphic" style="padding-right: 16px; color: black;">article</i>
+                                                            <span class="mdc-list-item__text" style="padding-left: 0; color: black;">Consultar</span>
+                                                        </li>
+                                                    </a>
+                                                    <a href="{{ url_for('indication_update', id=indication['_id']) }}">
+                                                        <li class="mdc-list-item" style="border-radius: 10ch;" role="menuitem">
+                                                            <span class="mdc-list-item__ripple"></span>
+                                                            <i class="material-icons mdc-list-item__graphic" style="padding-right: 16px; color: black;">edit</i>
+                                                            <span class="mdc-list-item__text" style="padding-left: 0; color: black;">Modificar</span>
+                                                        </li>
+                                                    </a>
+                                                    <li class="delete-btn mdc-list-item" style="border-radius: 10ch;" role="menuitem" onclick="this_popup_openclose(this)">
+                                                        <span class="mdc-list-item__ripple"></span>
+                                                        <i class="material-icons mdc-list-item__graphic" style="padding-right: 16px; color: black;">delete</i>
+                                                        <span class="mdc-list-item__text" style="padding-left: 0; color: black;">Eliminar</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

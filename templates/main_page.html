@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Pagina Principal - Laboratorio Doof{% endblock %}
+
+
+{% block topbar_title %}
+<span class="mdc-top-app-bar__title">Pagina Principal</span>
+{% endblock %}
+
+
+{% block topbar_user_info %}
+<div class="user_info_topbar" >
+    <h1 class="user_text_topbar" >{{ current_user["name"] }}</h1>
+    <h1 class="user_text_topbar" >@{{ current_user["username"] }}</h1>
+</div>
+{% endblock %}
+
+
+{% block sidebar_items %}
+<div class="list_items_top">
+    <a class="mdc-list-item mdc-list-item--activated" aria-current="page" tabindex="0">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+        <span class="mdc-list-item__text mdc-list-item__text_active">Inicio</span>
+    </a>
+    <a class="mdc-list-item">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">list</i>
+        <span class="mdc-list-item__text">Categorias</span>
+    </a>
+    <a class="mdc-list-item">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">medical_services</i>
+        <span class="mdc-list-item__text">Exámenes</span>
+    </a>
+    <a class="mdc-list-item" href="{{ url_for('indications_list') }}">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">checklist</i>
+        <span class="mdc-list-item__text">Indicaciones</span>
+    </a>
+    <a class="mdc-list-item" href="{{ url_for('user_tab') }}">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">people</i>
+        <span class="mdc-list-item__text">Usuario</span>
+    </a>
+</div>
+<div class="list_items_bottom">
+    <a class="mdc-list-item mdc-list-item_about" href="#">
+        <span class="mdc-list-item__ripple"></span>
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
+        <span class="mdc-list-item__text">Informacion</span>
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+    <h1 class="title_center first_title" >Inicio</h1>
+    <h1 class="content_center" >Bienvenido, {{ current_user["name"] }}</h1>
+    <div class="content_w_bg_group" >
+        <img id="image_bg" class="image_bg" src="https://images.pexels.com/photos/594233/pexels-photo-594233.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Lighted Purple Fiber Optic Lamp">
+        <div id="ac_cont" class="actual_content">
+            <h1 class="title_center" >Ir a</h1>
+            <div class="button_container">
+                <button class="mdc-button mdc-button--outlined">
+                    <span class="mdc-button__ripple"></span>
+                    <span class="mdc-button__label">Categorias</span>
+                </button>
+                <button class="mdc-button mdc-button--outlined">
+                    <span class="mdc-button__ripple"></span>
+                    <span class="mdc-button__label">Reportes</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <h1 class="title_center" style="padding-bottom: 1ch;" >Biografia del Dr</h1>
+    <div class="bottom_content">
+        <div>
+            <h1 class="content_center" style="font-size: large;" >El Dr. Heinz Doofenshmirtz es un villano de la serie de Disney Channel Phineas y Ferb. Gracias a sus inventos es el responsable de que desaparezcan muchas de las creaciones de Phineas y Ferb. Tiene atributos de tolerancia a la frustración y la perseverancia. Realiza planes malvados para dominar la ciudad de Danville, todos sin éxito gracias a la intervención del agente secreto Perry el Ornitorrinco, su principal enemigo. <br/><br/> Doofenshmirtz no es un personaje malvado motivado por la ira, la búsqueda del poder o la ambición; su rechazo hacia la sociedad y el origen de su maldad son producto de una infancia y juventud traumática que pretende resolver y superar con sus acciones.</h1>
+        </div>
+        <div>
+            <img id="image_doof" class="image_doof" src="https://vignette.wikia.nocookie.net/parody/images/4/45/Heinz_Doofenshmirtz.jpg/revision/latest?cb=20151216094252" alt="Dr Doofenshmirtz pfp">
+        </div>
+    </div>
+{% endblock %}

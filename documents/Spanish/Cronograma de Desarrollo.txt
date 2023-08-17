@@ -1,0 +1,90 @@
+******************************************* Etapas de Desarrollo del Programa *****************************************
+
+
+Pequeña lista de referencia para tener una idea de como se desarrollará el programa.
+Realizada con la finalidad de evitar algún percance en un punto avanzado del desarrollo.
+Esto, junto con las variables definidas en el Enunciado Principal, serán muy útiles a largo plazo.
+
+
+---------------------------------------------------- Lista de Etapas --------------------------------------------------
+
+
+Etapa 1 (Comienzo: 02/08/23 - Fin: 07/08/23):
+- Analisis del planteamiento.
+- Proposición de variables y objetos.
+- Investigación previa al comienzo del proyecto.
+- Creación de la documentación.
+
+
+Etapa 2 (Comienzo: 07/08/23 - Fin: -):
+- Creación del proyecto en sí.
+- Añadir todos los datos básicos para el funcionamiento del programa.
+- Añadir el HTML, CSS y JS básico.
+- Añadir el sistema de autenticación básico. (Leer Detalles - Etapa 2)
+- Añadir validaciones básicas necesarias y corregir errores graves.
+- Conectar con MongoDB.
+- Llegar a una version funcional del programa.
+- Subir los archivo con Git.
+- Hacer la conexión Git - Github - PythonAnywhere - MongoDb Atlas.
+- Actualizar la documentación por si se presentan cambios.
+
+
+Etapa 3 (Comienzo: - - Fin: -):
+- Pulir lo creado en la etapa anterior, tanto funcional como visualmente.
+- Realizar todas las correcciones necesarias y eliminar errores (leves y, en el peor caso, graves).
+- Pulir las validaciones lo mejor posible.
+- Pulir el CSS con animaciones e interfaces, y perfeccionar el JS.
+- Actualizar la documentación por si se presentan cambios.
+
+
+Etapa 4 (Comienzo: - - Fin: 15/08/23):
+- Realizar los extras.
+- Utilizar una libreria tipo ChartJS para la visualización de datos en los reportes.
+- Desplegarlo en un servicio en línea (como PythonAnywhere).
+- Investigar como conectar con MongoDB Atlas (capa gratuita, tiene limitaciones).
+- Lograr que el programa funcione de manera remota.
+
+
+-------------------------------------------------- Detalles - Etapa 1 -------------------------------------------------
+
+
+La etapa 1 del proyecto trata sobre el análisis profundo del enunciado, varias propuestas e ideas que deben ser
+organizadas para así evitar retrasos en un futuro cercano.
+Una breve investigación sobre varios componentes que se utilizaran en el proyecto para saber lo básico sobre ellos
+(Libreria CSS, PythonAnywhere, MongoDB Atlas, ChartJS, etcétera).
+Y también la creación de esta "documentación" (Diario de Desarrollo incluido).
+
+
+-------------------------------------------------- Detalles - Etapa 2 -------------------------------------------------
+
+
+La etapa 2 del proyecto (probablemente la etapa más larga) trata sobre comenzar con el desarrollo de éste, 
+principalmente creando el entorno virtual, instalando Flask, MongoPy y actualizando pip.
+Se creará la base.html y será añadida la framework CSS de la que hayamos investigado, al igual que el JS.
+Ahora, se creará el sistema de autenticación usuario-contraseña básico (Es un extra, pero es mejor 
+implementarlo desde un principio, dañar un código funcional casi al final del tiempo límite sería fatal).
+Luego, se crearán las colecciones en la BD (categorías, exámenes e indicaciones), se añadirá el código que
+permita realizar un CRUD básico entre la BD y el programa, y se irán corrigiendo los errores graves que aparezcan.
+Luego de llegar a una versión "estable", se subirán los archivos al repositorio utilizando un commit de git
+(sin olvidar configurar el gitignore), y se actualizará la documentación en caso de ser necesario.
+
+
+-------------------------------------------------- Detalles - Etapa 3 -------------------------------------------------
+
+
+La etapa 3 del proyecto trata sobre los pasos finales en cuanto al desarrollo principal, puliendo las funciones
+y validaciones del programa, embelleciendo este para llegar a un producto casi terminado.
+Aunque esta etapa quizás no sea tan larga como la Etapa 2, tal vez lleve su tiempo, pero es bueno, ya que
+mientras más se pueda pulir estos pasos finales, el programa se verá y funcionará de una manera más decente.
+De no contar con suficiente tiempo, el proyecto podría finalizar en ésta etapa, esperemos ese no sea el caso.
+
+
+-------------------------------------------------- Detalles - Etapa 4 -------------------------------------------------
+
+
+La etapa 4 del proyecto trata sobre los extras del proyecto, los cuales brindan puntos adicionales.
+No son obligatorios, pero no serían malos esos puntos extra.
+Se realizarán al final, para que no eviten la finalización del proyecto principal.
+
+
+***********************************************************************************************************************
