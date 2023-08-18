@@ -496,19 +496,19 @@ def category_add():
                                 id = categories.insert_one(new_cate).inserted_id
                                 if id:
                                     flash("Categoria creada exitosamente")
-                                    return redirect(url_for('indications_list'))
+                                    return redirect(url_for('categories_list'))
                                 else:
                                     flash("Ocurrio un error creando la categoria")
-                                    return redirect('/indications_list')
+                                    return redirect('/categories_list')
 
                             except StopIteration:
                                 id = categories.insert_one(new_cate).inserted_id
                                 if id:
                                     flash("Primera categoria creada exitosamente")
-                                    return redirect(url_for('indications_list'))
+                                    return redirect(url_for('categories_list'))
                                 else:
                                     flash("Ocurrio un error creando la categoria")
-                                    return redirect('/indications_list')
+                                    return redirect('/categories_list')
 
                     return render_template("category_add.html", current_user=user)
 
