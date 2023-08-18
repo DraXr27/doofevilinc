@@ -1,2 +1,2 @@
-# Doof Evil Page [Offline}
+# Doof Evil Page [Offline]
 Doofenshmirtz Evil Plan Test
