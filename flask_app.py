@@ -2,13 +2,13 @@ from flask import Flask, flash, redirect, render_template, request, url_for
 from bson.objectid import ObjectId
 from pymongo_get_database import get_database
 from validators import validate_user, validate_login, validate_indication, encrypt_pass, decrypt_pass, generate_key
+from check_signature import is_valid_signature
+import git
 
 app = Flask(__name__, template_folder="templates")
 app.config['SECRET_KEY'] = "7F~n)egL`C2_xu9m=8Qr3-J4>;QTY>n,$T3Ze/Bprr&&>xbFF#"
 
 logged_user = {}
-
-
 
 db = get_database()
 
@@ -43,6 +43,21 @@ def get_all_test():
     return render_template("list_base.html", indicationes=objects)
 
 
+
+
+
+@app.route('/update_server', methods=['POST'])
+def webhook():
+    if request.method == 'POST':
+        x_hub_signature = request.headers.get('X-Hub-Signature')
+        w_secret = 'doofenshmirtzsecretplan2077'
+        if not is_valid_signature(x_hub_signature, request.data, w_secret):
+            repo = git.Repo('https://github.com/DraXr27/doofevilinc')
+            origin = repo.remotes.origin
+            origin.pull()
+        return 'Updated PythonAnywhere successfully', 200
+    else:
+        return 'Wrong event type', 400
 
 
 @app.route('/', methods=['GET'])
