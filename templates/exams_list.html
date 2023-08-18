@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}Lista de Indicaciones - Laboratorio Doof{% endblock %}
+{% block title %}Lista de Examenes (Unfinished) - Laboratorio Doof{% endblock %}
 
 
 {% block topbar_title %}
-<span class="mdc-top-app-bar__title">Lista de Indicaciones</span>
+<span class="mdc-top-app-bar__title">Lista de Examenes (Unfinished)</span>
 {% endblock %}
 
 
@@ -54,18 +54,18 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="title_center first_title" >Lista de Indicaciones</h1>
+    <h1 class="title_center first_title" >Lista de Examenes (Unfinished)</h1>
     <div style="justify-content: center; align-items: center; display: flex; padding-top: 2ch; visibility: hidden">
-        <a href="{{ url_for('indication_add') }}">
+        <a href="{{ url_for('exam_add') }}">
             <button id="filled_butt" type="submit" class="mdc-button mdc-button--raised">
-                <span class="mdc-button__label_white">Añadir Indicacion</span>
+                <span class="mdc-button__label_white">Añadir Examen</span>
             </button>
         </a>
     </div>
     <div class="content_w_bg_group" >
         <img id="image_bg" class="image_bg" src="https://images.pexels.com/photos/594233/pexels-photo-594233.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Lighted Purple Fiber Optic Lamp">
         <div id="ac_cont" class="actual_content">
-            <h1 class="title_center" style="padding-bottom: 1ch;" >Indicaciones</h1>
+            <h1 class="title_center" style="padding-bottom: 1ch;" >Examenes</h1>
             <div style="display: contents;">
                 <div class="mdc-data-table invisiblebg" style="overflow-x: auto; height: 100%; border-radius: 3ch">
                     <div class="mdc-data-table__table-container">
@@ -102,7 +102,7 @@
                                                         <div class="mdc-button__ripple"></div>
                                                         <span class="mdc-button__label">Cancelar</span>
                                                     </button>
-                                                    <a href="{{ url_for('indication_delete', id=indication['_id']) }}">
+                                                    <a href="{{ url_for('exam_delete', id=indication['_id']) }}">
                                                         <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="discard">
                                                             <div class="mdc-button__ripple"></div>
                                                             <span class="mdc-button__label">Eliminar</span>
@@ -124,14 +124,14 @@
                                             <i class="option_btn material-icons mdc-list-item__graphic" style="cursor: default;" onclick="open_spc_options(this)">more_vert</i>
                                             <div class="menu-menu mdc-menu mdc-menu-surface">
                                                 <ul class="mdc-list" style="padding-bottom: 0;" role="menu" tabindex="-1">
-                                                    <a href="{{ url_for('indication_get', id=indication['_id']) }}">
+                                                    <a href="{{ url_for('exam_get', id=indication['_id']) }}">
                                                         <li class="mdc-list-item" style="border-radius: 10ch;" role="menuitem">
                                                             <span class="mdc-list-item__ripple"></span>
                                                             <i class="material-icons mdc-list-item__graphic" style="padding-right: 16px; color: black;">article</i>
                                                             <span class="mdc-list-item__text" style="padding-left: 0; color: black;">Consultar</span>
                                                         </li>
                                                     </a>
-                                                    <a href="{{ url_for('indication_update', id=indication['_id']) }}">
+                                                    <a href="{{ url_for('exam_update', id=indication['_id']) }}">
                                                         <li class="mdc-list-item" style="border-radius: 10ch;" role="menuitem">
                                                             <span class="mdc-list-item__ripple"></span>
                                                             <i class="material-icons mdc-list-item__graphic" style="padding-right: 16px; color: black;">edit</i>
