@@ -68,11 +68,14 @@ function this_popup_openclose(thisbtn) {
 
 
 function popup_openclose() {
-    popup = document.getElementById("mdc-dialog");
+    popups = document.getElementsByClassName("mdc-dialog");
     main = document.getElementById("body");
     sidebar = document.getElementById("main_sidebar");
 
-    popup.style.display = popup.style.display === "block" ? 'none' : 'block';
+    for (var i = 0; i < popups.length; i++) {
+            popups[i].style.display = popups[i].style.display === "none" ? 'none' : 'none';
+    }
+
     main.style.overflowY = main.style.overflowY === "hidden" ? 'scroll' : 'hidden';
     sidebar.style.width = sidebar.style.width === "0ch" ? '27px' : '0ch';
 }

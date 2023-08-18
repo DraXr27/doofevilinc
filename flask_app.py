@@ -621,7 +621,7 @@ def category_update(id):
                     try:
                         for cate in cateslist:
                             if cate['_id'] == oid:
-                                return render_template("indication_update.html", old_category=cate, current_user=user)
+                                return render_template("category_update.html", old_category=cate, current_user=user)
                     except StopIteration:
                         flash("No hay categorias añadidas")
                         return redirect(url_for('categories_list'))
