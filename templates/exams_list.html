@@ -28,12 +28,12 @@
         <i class="material-icons mdc-list-item__graphic" aria-hidden="true">list</i>
         <span class="mdc-list-item__text">Categorias</span>
     </a>
-    <a class="mdc-list-item" href="{{ url_for('exams_list') }}">
+    <a class="mdc-list-item mdc-list-item--activated" href="{{ url_for('exams_list') }}">
         <span class="mdc-list-item__ripple"></span>
         <i class="material-icons mdc-list-item__graphic" aria-hidden="true">medical_services</i>
         <span class="mdc-list-item__text">Exámenes</span>
     </a>
-    <a class="mdc-list-item mdc-list-item--activated" href="{{ url_for('indications_list') }}">
+    <a class="mdc-list-item" href="{{ url_for('indications_list') }}">
         <span class="mdc-list-item__ripple"></span>
         <i class="material-icons mdc-list-item__graphic" aria-hidden="true">checklist</i>
         <span class="mdc-list-item__text">Indicaciones</span>
@@ -55,7 +55,7 @@
 
 {% block content %}
     <h1 class="title_center first_title" >Lista de Indicaciones</h1>
-    <div style="justify-content: center; align-items: center; display: flex; padding-top: 2ch;">
+    <div style="justify-content: center; align-items: center; display: flex; padding-top: 2ch; visibility: hidden">
         <a href="{{ url_for('indication_add') }}">
             <button id="filled_butt" type="submit" class="mdc-button mdc-button--raised">
                 <span class="mdc-button__label_white">Añadir Indicacion</span>
@@ -73,13 +73,16 @@
                             <thead>
                                 <tr class="mdc-data-table__header-row">
                                     <th class="mdc-data-table__header-cell invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col">Nombre</th>
-                                    <th class="mdc-data-table__header-cell invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col">Instruccion</th>
+                                    <th class="mdc-data-table__header-cell invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col">Categoria</th>
+                                    <th class="mdc-data-table__header-cell invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col">Tipo</th>
+                                    <th class="mdc-data-table__header-cell invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col">Precio</th>
+                                    <th class="mdc-data-table__header-cell invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col">Indicacion</th>
                                     <th class="mdc-data-table__header-cell invisiblebg" onclick="closeall_spc_options()" role="columnheader" scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody class="mdc-data-table__content">
-                                {% if indicationes %}
-                                    {% for indication in indicationes %}
+                                {% if exames %}
+                                    {% for exam in exames %}
 
                                     <div id="mdc-dialog" class="mdc-dialog delete-dialog" style="display: none;">
                                         <div class="mdc-dialog__container">
@@ -92,7 +95,7 @@
                                                     Eliminar?
                                                 </div>
                                                 <div class="mdc-dialog__content" id="my-dialog-content">
-                                                    Esta seguro que desea eliminar esta indicacion? <br> Esta accion es permanente y no se puede deshacer.
+                                                    Esta seguro que desea eliminar este examen? <br> Esta accion es permanente y no se puede deshacer.
                                                 </div>
                                                 <div class="mdc-dialog__actions">
                                                     <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel" onclick="popup_openclose()" >
@@ -112,8 +115,11 @@
                                     </div>
 
                                     <tr class="mdc-data-table__row">
-                                        <th class="mdc-data-table__cell" onclick="closeall_spc_options()" scope="row">{{ indication['name'] }}</th>
-                                        <th class="mdc-data-table__cell" onclick="closeall_spc_options()" scope="row">{{ indication['instruction'] }}</th>
+                                        <th class="mdc-data-table__cell" onclick="closeall_spc_options()" scope="row">{{ exam['name'] }}</th>
+                                        <th class="mdc-data-table__cell" onclick="closeall_spc_options()" scope="row">{{ exam['category'] }}</th>
+                                        <th class="mdc-data-table__cell" onclick="closeall_spc_options()" scope="row">{{ exam['type'] }}</th>
+                                        <th class="mdc-data-table__cell" onclick="closeall_spc_options()" scope="row">{{ exam['price'] }}</th>
+                                        <th class="mdc-data-table__cell" onclick="closeall_spc_options()" scope="row">{{ exam['indications'] }}</th>
                                         <td class="mdc-data-table__cell" style="width: 2ch;">
                                             <i class="option_btn material-icons mdc-list-item__graphic" style="cursor: default;" onclick="open_spc_options(this)">more_vert</i>
                                             <div class="menu-menu mdc-menu mdc-menu-surface">

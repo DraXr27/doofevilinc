@@ -20,12 +20,12 @@
         <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
         <span class="mdc-list-item__text mdc-list-item__text_active">Inicio</span>
     </a>
-    <a class="mdc-list-item" href="#">
+    <a class="mdc-list-item" href="{{ url_for('categories_list') }}">
         <span class="mdc-list-item__ripple"></span>
         <i class="material-icons mdc-list-item__graphic" aria-hidden="true">list</i>
         <span class="mdc-list-item__text">Categorias</span>
     </a>
-    <a class="mdc-list-item" href="#">
+    <a class="mdc-list-item" href="{{ url_for('exams_list') }}">
         <span class="mdc-list-item__ripple"></span>
         <i class="material-icons mdc-list-item__graphic" aria-hidden="true">medical_services</i>
         <span class="mdc-list-item__text">Exámenes</span>
@@ -35,7 +35,7 @@
         <i class="material-icons mdc-list-item__graphic" aria-hidden="true">checklist</i>
         <span class="mdc-list-item__text">Indicaciones</span>
     </a>
-    <a class="mdc-list-item mdc-list-item--activated" aria-current="page" tabindex="0">
+    <a class="mdc-list-item mdc-list-item--activated" href="{{ url_for('user_tab') }}">
         <span class="mdc-list-item__ripple"></span>
         <i class="material-icons mdc-list-item__graphic" aria-hidden="true">people</i>
         <span class="mdc-list-item__text">Usuario</span>

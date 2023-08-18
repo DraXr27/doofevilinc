@@ -52,7 +52,7 @@ function closeall_spc_options() {
 function this_popup_openclose(thisbtn) {
     button = thisbtn
     buttons = document.getElementsByClassName("delete-btn")
-    popups = document.getElementsByClassName("mdc-dialog")
+    popups = document.getElementsByClassName("delete-dialog")
 
     for (var i = 0; i < buttons.length; i++) {
         if (buttons[i] == button) {

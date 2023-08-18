@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 
-{% block title %}Registrarse - Laboratorio Doof{% endblock %}
+{% block title %}Añadir Categoria - Laboratorio Doof{% endblock %}
 
 
 {% block topbar_title %}
-<span class="mdc-top-app-bar__title">Registrarse</span>
+<span class="mdc-top-app-bar__title">Añadir Categoria</span>
 {% endblock %}
 
 
 {% block topbar_user_info %}
-<div class="user_info_topbar" ></div>
+<div class="user_info_topbar" >
+    <h1 class="user_text_topbar" >{{ current_user["name"] }}</h1>
+    <h1 class="user_text_topbar" >@{{ current_user["username"] }}</h1>
+</div>
 {% endblock %}
 
 
@@ -51,7 +54,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="title_center first_title" >Registrarse</h1>
+    <h1 class="title_center first_title" >Añadir Categoria</h1>
     <form method="post">
         <div class="content_w_bg_group" >
             <img id="image_bg" class="image_bg" src="https://images.pexels.com/photos/594233/pexels-photo-594233.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Lighted Purple Fiber Optic Lamp">
@@ -64,7 +67,7 @@
                                 <span class="mdc-notched-outline__notch"></span>
                                 <span class="mdc-notched-outline__trailing"></span>
                             </span>
-                            <input type="text" id="user_name" name="user_name" placeholder="Nombre" class="text_input">
+                            <input type="text" id="category_name" name="category_name" placeholder="Nombre de Indicacion" class="text_input">
                         </label>
                         <label class="mdc-text-field mdc-text-field--outlined">
                             <span class="mdc-notched-outline">
@@ -72,29 +75,18 @@
                                 <span class="mdc-notched-outline__notch"></span>
                                 <span class="mdc-notched-outline__trailing"></span>
                             </span>
-                            <input type="text" id="user_username" name="user_username" placeholder="Usuario" class="text_input">
-                        </label>
-                        <label class="mdc-text-field mdc-text-field--outlined">
-                            <span class="mdc-notched-outline">
-                                <span class="mdc-notched-outline__leading"></span>
-                                <span class="mdc-notched-outline__notch"></span>
-                                <span class="mdc-notched-outline__trailing"></span>
-                            </span>
-                            <input type="password" id="user_password" name="user_password" placeholder="Contraseña" class="text_input">
-                            <a id="show_psw_btn" class="show_psw_btn" style="align-self: center;" onclick="pass_show_hide()" >
-                                <i id="show_psw_icon" class="material-icons mdc-list-item__graphic" aria-hidden="true">visibility</i>
-                            </a>
+                            <input type="text" id="category_description" name="category_description" placeholder="Descripcion" class="text_input">
                         </label>
                     </div>
                     <div class="buttons_login">
-                        <a href="{{ url_for('login') }}">
+                        <a href="{{ url_for('categories_list') }}">
                             <button type="button" class="mdc-button mdc-button--outlined">
                                 <span class="mdc-button__ripple"></span>
-                                <span class="mdc-button__label">Volver</span>
+                                <span class="mdc-button__label">Cancelar</span>
                             </button>
                         </a>
                         <button id="filled_butt" type="submit" class="mdc-button mdc-button--raised">
-                            <span class="mdc-button__label_white">Registrarse</span>
+                            <span class="mdc-button__label_white">Añadir</span>
                         </button>
                     </div>
                 </div>
